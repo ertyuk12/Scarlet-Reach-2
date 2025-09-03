@@ -2,6 +2,8 @@
 	name = "Ride them"
 	stamina_cost = 1.0
 	aggro_grab_instead_same_tile = FALSE
+	feed_type = "USER"
+	charm_type = "TARGET"
 
 /datum/sex_action/vaginal_ride_sex/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
@@ -42,7 +44,9 @@
 	user.sexcon.perform_sex_action(target, 2, 4, FALSE)
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_love("[target] cums into [user]'s cunt!"))
+		try_succubus_drain(user,target,feed_type)
 		target.sexcon.cum_into()
+
 		target.try_impregnate(user)
 		target.virginity = FALSE
 		user.virginity = FALSE

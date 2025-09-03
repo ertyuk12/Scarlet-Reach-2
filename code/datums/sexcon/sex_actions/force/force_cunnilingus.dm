@@ -2,6 +2,8 @@
 	name = "Force them to suck"
 	require_grab = TRUE
 	stamina_cost = 1.0
+	feed_type = "TARGET"
+	charm_type = "USER"
 
 /datum/sex_action/force_cunnilingus/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
@@ -42,7 +44,9 @@
 	user.sexcon.handle_passive_ejaculation()
 
 	user.sexcon.perform_sex_action(target, 0, 2, FALSE)
-	target.sexcon.handle_passive_ejaculation()
+	if(user.sexcon.check_active_ejaculation())
+		try_succubus_drain(user,target,feed_type)
+		target.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/force_cunnilingus/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.visible_message(span_warning("[user] pulls [target]'s head away."))

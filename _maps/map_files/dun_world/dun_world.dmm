@@ -17603,6 +17603,13 @@
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave/goblindungeon)
+"fJm" = (
+/obj/structure/fluff/traveltile/succubus{
+	aportalid = "succexit3";
+	aportalgoesto = "succin3"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cave)
 "fJn" = (
 /obj/structure/stairs{
 	dir = 8
@@ -37047,6 +37054,13 @@
 /obj/effect/spawner/lootdrop/roguetown/sewers,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/cave)
+"lWH" = (
+/obj/structure/fluff/traveltile/succubus{
+	aportalid = "succexit2";
+	aportalgoesto = "succin2"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cave)
 "lWJ" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -57623,6 +57637,13 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
+"syH" = (
+/obj/structure/fluff/traveltile/succubus{
+	aportalid = "succexit1";
+	aportalgoesto = "succin1"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cave)
 "syM" = (
 /obj/structure/well,
 /turf/open/floor/rogue/grass,
@@ -307453,9 +307474,9 @@ ogs
 ogs
 ogs
 qHj
-qHj
-qHj
-miF
+syH
+toJ
+toJ
 miF
 miF
 miF
@@ -307905,12 +307926,12 @@ ogs
 ogs
 miF
 miF
-miF
-miF
-miF
-miF
-miF
-miF
+lWH
+toJ
+toJ
+toJ
+toJ
+toJ
 miF
 miF
 miF
@@ -308357,16 +308378,16 @@ bhJ
 bhJ
 miF
 miF
+fJm
+toJ
+toJ
+toJ
 miF
+toJ
 miF
-miF
-miF
-miF
-miF
-miF
-miF
-miF
-miF
+toJ
+toJ
+toJ
 qHj
 qHj
 qHj
@@ -308810,15 +308831,15 @@ bhJ
 bhJ
 bhJ
 bhJ
-miF
+toJ
 bhJ
-bhJ
-miF
-miF
-miF
-miF
-miF
-miF
+toJ
+toJ
+toJ
+toJ
+toJ
+toJ
+toJ
 miF
 qHj
 qHj
@@ -309266,12 +309287,12 @@ bhJ
 bhJ
 bhJ
 bhJ
-bhJ
-bhJ
-bhJ
-miF
-miF
-miF
+toJ
+toJ
+toJ
+toJ
+toJ
+toJ
 miF
 miF
 miF
@@ -309719,10 +309740,10 @@ bhJ
 bhJ
 bhJ
 bhJ
-bhJ
-bhJ
-bhJ
-bhJ
+toJ
+toJ
+toJ
+toJ
 bhJ
 miF
 miF
@@ -310171,9 +310192,9 @@ rnW
 rnW
 bSX
 bhJ
-bhJ
-bhJ
-bhJ
+toJ
+toJ
+toJ
 bhJ
 bhJ
 bhJ

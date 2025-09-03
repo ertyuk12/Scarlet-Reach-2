@@ -1,6 +1,8 @@
 /datum/sex_action/masturbate_penis_over
 	name = "Jerk over them"
 	check_same_tile = FALSE
+//	feed_type = "USER"
+	charm_type = "BOTH"
 
 /datum/sex_action/masturbate_penis_over/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)

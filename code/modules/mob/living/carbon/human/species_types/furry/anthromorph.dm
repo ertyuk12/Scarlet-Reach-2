@@ -79,8 +79,10 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/butt/wildkin,
 		/datum/customizer/organ/vagina/anthro,
 		/datum/customizer/organ/horns/tusks,
+		/datum/customizer/organ/butt/normal,
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,

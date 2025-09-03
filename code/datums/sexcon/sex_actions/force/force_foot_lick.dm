@@ -3,6 +3,8 @@
 	check_same_tile = FALSE
 	require_grab = TRUE
 	stamina_cost = 1.0
+//	feed_type = "TARGET"
+	charm_type = "USER"
 
 /datum/sex_action/force_foot_lick/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)

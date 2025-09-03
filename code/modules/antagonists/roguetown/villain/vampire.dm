@@ -45,6 +45,8 @@
 		return span_boldnotice("Another deadite.")
 	if(istype(examined_datum, /datum/antagonist/skeleton))
 		return span_boldnotice("Another deadite.")
+	if(istype(examined_datum, /datum/antagonist/succubus))
+		return span_boldnotice("Another deadite.")
 
 /datum/antagonist/vampire/lesser //le shitcode faec
 	name = "Lesser Vampire"
@@ -394,6 +396,8 @@
 	if(mind.has_antag_datum(/datum/antagonist/werewolf))
 		return
 	if(mind.has_antag_datum(/datum/antagonist/zombie))
+		return
+	if(mind.has_antag_datum(/datum/antagonist/succubus))
 		return
 	if(mob_timers["becoming_vampire"])
 		return

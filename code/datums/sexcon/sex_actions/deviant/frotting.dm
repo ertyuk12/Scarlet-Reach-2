@@ -1,5 +1,7 @@
 /datum/sex_action/frotting
 	name = "Frot them"
+	//feed_type = "TARGET"
+	charm_type = "BOTH"
 
 /datum/sex_action/frotting/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)

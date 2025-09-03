@@ -2,6 +2,8 @@
 	name = "Force them to suck nipples"
 	require_grab = TRUE
 	stamina_cost = 1.0
+//	feed_type = "TARGET"
+	charm_type = "USER"
 
 /datum/sex_action/force_suck_nipples/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)

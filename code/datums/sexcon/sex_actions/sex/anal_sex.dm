@@ -34,6 +34,7 @@
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s butt!"))
 		user.sexcon.cum_into()
+		try_succubus_drain(user,target,feed_type)
 		user.virginity = FALSE
 
 	if(user.sexcon.considered_limp())

@@ -54,6 +54,7 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/butt/normal,
 		/datum/customizer/organ/vagina/human_anthro,
 		)
 	body_marking_sets = list(
@@ -74,7 +75,7 @@
 
 /datum/species/human/northern/check_roundstart_eligible()
 	return TRUE
-	
+
 
 /datum/species/human/northern/get_skin_list()
 	return list(

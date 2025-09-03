@@ -370,3 +370,8 @@
 	stressadd = 10
 	desc = span_boldred("Perhaps I shouldn't have done that...")
 	timer = 12 MINUTES
+
+/datum/stressevent/nosuccubus
+	timer = 60 MINUTES
+	stressadd = 10
+	desc = "<span class='red'>Nothing will ever match the pleasure I felt earlier..I-I need it again....</span>"

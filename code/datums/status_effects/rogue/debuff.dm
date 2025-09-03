@@ -472,3 +472,39 @@
 	name = "Cold"
 	desc = "Something has chilled me to the bone! It's hard to move."
 	icon_state = "muscles"
+
+//succubi stuff
+/datum/status_effect/debuff/succuhate
+	id = "succuhate"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/succuhate
+	effectedstats = list("speed" = -5, "endurance" = -10, "perception" = -4, "intelligence" = -8)
+	duration = 60 MINUTES // you can technically outlive this, but it's going to be awful, to encourage people to return to their local succubi
+
+/datum/status_effect/debuff/succuhate/on_apply()
+	. = ..()
+	owner.remove_stress(/datum/stressevent/cumsuccubus)
+	owner.add_stress(/datum/stressevent/nosuccubus)
+
+
+/atom/movable/screen/alert/status_effect/debuff/succuhate
+	name = "Unsated Desires"
+	desc = "My body aches! I need that pleasure again!"
+	icon_state = "debuff"
+
+
+
+/datum/status_effect/debuff/succucharm
+	id = "succucharm"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/succuhate
+	effectedstats = list("speed" = -2, "perception" = -4, "intelligence" = -4)
+	duration = 30 SECONDS
+
+
+
+
+/atom/movable/screen/alert/status_effect/debuff/succucharm
+	name = "Carnal Desires"
+	desc = "My loins ache, and something tells me they won't stop aching until such a pretty creature brings me to climax.."
+	icon_state = "debuff"
+
+

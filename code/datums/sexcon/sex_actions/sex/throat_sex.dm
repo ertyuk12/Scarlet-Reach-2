@@ -1,6 +1,8 @@
 /datum/sex_action/throat_sex
 	name = "Fuck their throat"
 	stamina_cost = 1.0
+	feed_type = "TARGET"
+	charm_type = "USER"
 
 /datum/sex_action/throat_sex/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
@@ -34,6 +36,7 @@
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s throat!"))
 		user.sexcon.cum_into()
+		try_succubus_drain(user,target,feed_type)
 		user.virginity = FALSE
 
 	if(user.sexcon.considered_limp())

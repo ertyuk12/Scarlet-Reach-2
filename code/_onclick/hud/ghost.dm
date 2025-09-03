@@ -49,6 +49,9 @@
 
 				G.returntolobby(0)
 
+
+
+
 /atom/movable/screen/ghost/reenter_corpse
 	name = "Reenter corpse"
 	icon_state = "reenter_corpse"

@@ -1,5 +1,7 @@
 /datum/sex_action/thighjob
 	name = "Use their thighs to get off"
+	//feed_type = "BOTH"
+	charm_type = "USER"
 
 /datum/sex_action/thighjob/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)

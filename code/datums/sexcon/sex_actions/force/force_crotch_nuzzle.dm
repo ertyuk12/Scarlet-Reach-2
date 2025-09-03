@@ -2,6 +2,8 @@
 	name = "Force them to nuzzle"
 	require_grab = TRUE
 	stamina_cost = 1.0
+//	feed_type = "TARGET"
+	charm_type = "BOTH"
 
 /datum/sex_action/force_crotch_nuzzle/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)

@@ -15,6 +15,7 @@
 	var/race
 	var/datum/bodypart_feature/underwear/undies_feature
 	var/covers_breasts = FALSE
+	var/covers_butt = FALSE
 	sewrepair = TRUE
 	grid_height = 32
 	grid_width = 32
@@ -52,3 +53,4 @@
 	name = "athletic leotard"
 	icon_state = "athletic_leotard"
 	covers_breasts = TRUE
+	//covers_butt = true

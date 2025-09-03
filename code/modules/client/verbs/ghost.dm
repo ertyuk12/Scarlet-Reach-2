@@ -44,6 +44,92 @@ GLOBAL_LIST_INIT(ghost_verbs, list(
 		if("No")
 			usr << "You have second thoughts."
 
+//client/proc/descend()
+//	set name = "Journey to the Underworld"
+//	set category = "Spirit"
+
+//	var/descend_text = "Descend to the Underworld?"
+
+//	if(isrogueobserver(mob) || isliving(mob))
+//		var/mob/living/carbon/human/D = mob
+//		if(D.funeral)
+	//		descend_text = "Your body has been buried.\n\
+							Are you ready to be judged?"
+
+	//switch(alert(descend_text, "", "Yes", "No"))
+	//	if("Yes")
+	//		if(isrogueobserver(mob) || isliving(mob))
+	//			var/mob/living/carbon/human/D = mob
+		//		if(D.funeral)
+
+		//			descend_text = "Your body has been buried.\n\
+		//						Do you wish to be judged?"
+			//		switch(alert(descend_text, "", "Yes", "No"))
+			//			if("Yes")
+			//				try_descend()
+			//			if("No")
+			//				try_descend(TRUE)
+			//	else
+		////			try_descend(TRUE)
+		//	if("No")
+		///		usr << "You have second thoughts."
+
+//client/proc/try_descend(var/toghost = FALSE)
+//	var/mob/dead/observer/rogue/rogueghoster = mob
+
+//	if(istype(mob, /mob/living/carbon/spirit))
+//		//HONEYPOT CODE, REMOVE LATER
+	//	message_admins("STUPID MOTHERFUCKER [key] IS TRYING TO CRASH THE SERVER BY SPAWNING 3 GORILLION SPIRITS!")
+////		return
+///	var/mob/living/carbon/human/D
+///	var/datum/mind/prevmind // for tracking mind-based respawns w/ spirit
+//	if(!isadminobserver(mob) && !isnewplayer(mob)) // auto-respawning aghosts that become spirits might not be great
+//		prevmind = mob.mind
+
+//	if(isrogueobserver(mob) && mob.mind) // adminghosts are unaffected, base observer type
+
+//		D = rogueghoster.mind.current
+//		if(D.funeral && !toghost)
+//			var/mob/dead/observer/rogue/rogueghost = mob
+//			to_chat(rogueghost, span_rose("With my body buried in creation, my soul passes on in peace..."))
+//			burial_rite_return_ghost_to_lobby(rogueghost)
+//			return
+///
+//	if(isliving(mob))
+//		D = mob
+//		if(D.mind && D.funeral && !toghost)
+//			var/ghost = burial_rite_make_ghost(D)
+//			if(ghost)
+//	//			to_chat(ghost, span_rose("With my body buried in creation, my soul passes on in peace..."))
+//				burial_rite_return_ghost_to_lobby(ghost)
+//				return
+	//		else
+		//		message_admins("[key_name(mob)] was funeralized, but failed to turn into ghost when using Journey to the Underworld verb. Might need admin intervention.")
+		//		mob.log_message("was funeralized, but failed to turn into ghost when using Journey to the Underworld verb.", LOG_GAME)
+
+		// Check if the player's job is hiv+
+	//	var/datum/job/target_job = SSjob.GetJob(D.assigned_role)
+	//	if(target_job)
+	//		if(target_job.job_reopens_slots_on_death)
+	//			target_job.current_positions = max(0, target_job.current_positions - 1)
+	//		if(target_job.same_job_respawn_delay)
+	//			// Store the current time for the player
+	//			GLOB.job_respawn_delays[src.ckey] = world.time + target_job.same_job_respawn_delay
+
+//	for(var/obj/effect/landmark/underworld/A in shuffle(GLOB.landmarks_list))
+//		var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(A.loc)
+	//	if (mob.client)
+//		client.prefs.copy_to(O)
+//		O.dna.update_dna_identity()
+//		O.livingname = mob.name
+//		O.ckey = ckey
+//		O.set_patron(prefs.selected_patron)
+//		O.prevmind = prevmind // for if we get buried later
+	//	SSdroning.area_entered(get_area(O), O.client)
+	//	break
+//	verbs -= GLOB.ghost_verbs
+
+
 /client/proc/reenter_corpse()
 	set category = "Spirit"
 	set name = "Reenter Corpse"

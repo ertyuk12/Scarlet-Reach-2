@@ -46,3 +46,6 @@
 
 /mob/living/proc/has_breasts()
 	return gender == FEMALE
+
+/mob/living/proc/has_butt()
+	return gender == FEMALE

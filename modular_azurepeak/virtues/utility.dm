@@ -374,3 +374,18 @@
 	name = "Heresiarch"
 	desc = "The 'Holy' See has their blood-stained grounds, and so do we. Underneath their noses, we pray to the true gods - I know the location of the local heretic conclave. Secrecy is paramount. If found out, I will surely be killed."
 	added_traits = list(TRAIT_HERESIARCH)
+
+/datum/virtue/heretic/succubus
+	name = "Weakened Succubus"
+	desc = "Either by being a Baothan-born creature, or permitting Baotha to have her hand in modifying your body, you have become a beautiful, yet heretical, creature. You rely on the seed of others to survive, and still have a degree of allergy toward crosses, but unlike your stronger kin, you're weaker, unable to heal as much, and more suited for the current day."
+	added_traits = list(TRAIT_LESSERSUCCUBUS)
+
+/datum/virtue/heretic/succubus/apply_to_human(mob/living/carbon/human/recipient)
+	. = ..()
+	if(recipient.mind)
+		var/datum/antagonist/new_antag = new /datum/antagonist/succubuslesser
+		var/datum/antagonist/succubus/SD = recipient.mind.has_antag_datum(/datum/antagonist/succubus)
+		if(SD)
+			SD.vmax += 500
+		else
+			recipient.mind.add_antag_datum(new_antag)

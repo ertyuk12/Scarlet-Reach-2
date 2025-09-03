@@ -1,6 +1,8 @@
 /datum/sex_action/kissing
 	name = "Make out with them"
 	check_same_tile = FALSE
+	//feed_type = "USER"
+	charm_type = "BOTH"
 
 /datum/sex_action/kissing/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)

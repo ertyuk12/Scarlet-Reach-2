@@ -139,3 +139,14 @@ GLOBAL_VAR_INIT(underworld_coins, 0)
 			new /obj/item/underworld/coin(B.loc)
 
 
+/obj/item/underworld/coin
+	name = "Equality"
+	desc = "If I were mortal, I would say this is just a odd looking coin..But I know better.."
+	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
+	icon_state = "soul1"
+
+/obj/item/obj/item/underworld/coin/getonmobprop(tag)
+	. = ..()
+	if(tag != "gen")
+		return
+	return list("shrink" = 0.10, "sx" = -6, "sy" = 6, "nx" = 6, "ny" = 7, "wx" = 0, "wy" = 5, "ex" = -1, "ey" = 7, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -50, "sturn" = 40, "wturn" = 50, "eturn" = -50, "nflip" = 0, "sflip" = 8, "wflip" = 8, "eflip" = 0)

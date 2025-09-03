@@ -46,28 +46,28 @@
 /mob/living/carbon/human/MiddleMouseDrop_T(atom/movable/dragged, mob/living/user)
 	var/mob/living/carbon/human/target = src
 
-	if(user.mmb_intent)
-		return ..()
-	if(!istype(dragged))
-		return
+	//if(user.mmb_intent)
+	//	return ..()
+	//if(!istype(dragged))
+	//	return
 	// Need to drag yourself to the target.
-	if(dragged != user)
-		return
-	if(!user.can_do_sex())
-		to_chat(user, "<span class='warning'>I can't do this.</span>")
-		return
-	if(!user.client.prefs.sexable)
-		to_chat(user, "<span class='warning'>I don't want to touch [target]. (Your ERP preference, in the options)</span>")
-		return
-	if(!target.client || !target.client.prefs)
-		to_chat(user, span_warning("[target] is simply not there. I can't do this."))
-		log_combat(user, target, "tried ERP menu against d/ced")
-		return
-	if(!target.client.prefs.sexable)
-		to_chat(user, "<span class='warning'>[target] doesn't want to be touched. (Their ERP preference, in the options)</span>")
-		to_chat(target, "<span class='warning'>[user] failed to touch you. (Your ERP preference, in the options)</span>")
-		log_combat(user, target, "tried unwanted ERP menu against")
-		return
+	//if(dragged != user)
+	//	return
+	//if(!user.can_do_sex())
+	//	to_chat(user, "<span class='warning'>I can't do this.</span>")
+	//	return
+	//if(!user.client.prefs.sexable)
+	//	to_chat(user, "<span class='warning'>I don't want to touch [target]. (Your ERP preference, in the options)</span>")
+	//	return
+	//if(!target.client || !target.client.prefs)
+	//	to_chat(user, span_warning("[target] is simply not there. I can't do this."))
+	//	log_combat(user, target, "tried ERP menu against d/ced")
+	//	return
+	//if(!target.client.prefs.sexable)
+	//	to_chat(user, "<span class='warning'>[target] doesn't want to be touched. (Their ERP preference, in the options)</span>")
+	//	to_chat(target, "<span class='warning'>[user] failed to touch you. (Your ERP preference, in the options)</span>")
+	//	log_combat(user, target, "tried unwanted ERP menu against")
+	//	return
 	user.sexcon.start(target)
 
 /mob/living/proc/can_do_sex()

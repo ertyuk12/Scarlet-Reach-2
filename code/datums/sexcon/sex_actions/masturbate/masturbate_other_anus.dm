@@ -1,6 +1,8 @@
 /datum/sex_action/masturbate_other_anus
 	name = "Finger their butt"
 	check_same_tile = FALSE
+	//feed_type = "USER"
+	charm_type = "TARGET"
 
 /datum/sex_action/masturbate_other_anus/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)

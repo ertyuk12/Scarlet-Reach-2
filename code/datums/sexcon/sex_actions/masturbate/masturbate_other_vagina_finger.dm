@@ -1,6 +1,8 @@
 /datum/sex_action/masturbate_other_vagina_finger
 	name = "Finger their pussy"
 	check_same_tile = FALSE
+//	feed_type = "USER"
+	charm_type = "TARGET"
 
 /datum/sex_action/masturbate_other_vagina_finger/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)

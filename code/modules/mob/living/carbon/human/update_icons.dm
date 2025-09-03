@@ -1116,7 +1116,7 @@ There are several things that need to be remembered:
 			if(cloak.alternate_worn_layer == TABARD_LAYER)
 				overlays_standing[TABARD_LAYER] = cloak_overlay
 			if(cloak.alternate_worn_layer == UNDER_ARMOR_LAYER)
-				overlays_standing[UNDER_ARMOR_LAYER] = cloak_overlay	
+				overlays_standing[UNDER_ARMOR_LAYER] = cloak_overlay
 			if(cloak.alternate_worn_layer == CLOAK_BEHIND_LAYER)
 				overlays_standing[CLOAK_BEHIND_LAYER] = cloak_overlay
 			if(!cloak.alternate_worn_layer)
@@ -1419,7 +1419,7 @@ There are several things that need to be remembered:
 				mouth_overlay.pixel_y += dna.species.offset_features[OFFSET_MOUTH_F][2]
 		overlays_standing[MOUTH_LAYER] = mouth_overlay
 		apply_overlay(MOUTH_LAYER)
-	
+
 	rebuild_obscured_flags()
 
 //endrogue
@@ -1933,5 +1933,13 @@ generate/load female uniform sprites matching all previously decided variables
 	if(!boobs)
 		return FALSE
 	if(boobs.breast_size == 0)
+		return FALSE
+	return TRUE
+
+/mob/living/carbon/proc/has_butt_overlay()
+	var/obj/item/organ/butt/butt = getorganslot(ORGAN_SLOT_BUTT)
+	if(!butt)
+		return FALSE
+	if(butt.butt_size == 0)
 		return FALSE
 	return TRUE

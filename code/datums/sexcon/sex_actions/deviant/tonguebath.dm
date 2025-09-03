@@ -1,5 +1,7 @@
 /datum/sex_action/tonguebath
 	name = "Bathe with tongue"
+	//feed_type = "BOTH"
+	charm_type = "BOTH"
 
 /datum/sex_action/tonguebath/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)

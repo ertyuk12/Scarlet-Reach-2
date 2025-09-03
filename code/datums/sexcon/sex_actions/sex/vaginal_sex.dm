@@ -1,6 +1,8 @@
 /datum/sex_action/vaginal_sex
 	name = "Fuck their cunt"
 	stamina_cost = 1.0
+	feed_type = "TARGET"
+	charm_type = "USER"
 
 /datum/sex_action/vaginal_sex/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
@@ -38,6 +40,7 @@
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s cunt!"))
 		user.sexcon.cum_into()
+		try_succubus_drain(user,target,feed_type)
 		user.try_impregnate(target)
 		user.virginity = FALSE
 		target.virginity = FALSE

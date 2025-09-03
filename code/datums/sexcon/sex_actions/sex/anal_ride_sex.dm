@@ -2,6 +2,8 @@
 	name = "Ride them anally"
 	stamina_cost = 1.0
 	aggro_grab_instead_same_tile = FALSE
+	feed_type = "USER"
+	charm_type = "TARGET"
 
 /datum/sex_action/anal_ride_sex/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
@@ -39,6 +41,7 @@
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_love("[target] cums into [user]'s butt!"))
 		target.sexcon.cum_into()
+		try_succubus_drain(user,target,feed_type)
 		target.virginity = FALSE
 
 /datum/sex_action/anal_ride_sex/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)

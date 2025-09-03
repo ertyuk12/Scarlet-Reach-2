@@ -1,5 +1,7 @@
 /datum/sex_action/cunnilingus
 	name = "Suck their cunt off"
+	feed_type = "USER"
+	charm_type = "TARGET"
 
 /datum/sex_action/cunnilingus/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
@@ -30,6 +32,7 @@
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_love("[target] ejaculates into [user]'s mouth!"))
 		target.sexcon.cum_into()
+		try_succubus_drain(user,target,feed_type)
 
 /datum/sex_action/cunnilingus/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.visible_message(span_warning("[user] stops sucking [target]'s clit ..."))

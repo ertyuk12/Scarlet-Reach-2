@@ -87,7 +87,7 @@
 	penis_type = PENIS_TYPE_TENTACLE
 	sheath_type = SHEATH_TYPE_NONE
 
-	
+
 /obj/item/organ/vagina
 	name = "vagina"
 	icon_state = "severedtail" //placeholder
@@ -143,3 +143,13 @@
 	name = "internal testicles"
 	visible_organ = FALSE
 	accessory_type = /datum/sprite_accessory/none
+
+/obj/item/organ/butt
+	name = "butt"
+	icon_state = "severedtail" //placeholder
+	visible_organ = TRUE
+	zone = BODY_ZONE_PRECISE_STOMACH
+	slot = ORGAN_SLOT_BUTT
+	organ_dna_type = /datum/organ_dna/butt
+	accessory_type = /datum/sprite_accessory/butt/pair
+	var/butt_size = DEFAULT_BUTT_SIZE

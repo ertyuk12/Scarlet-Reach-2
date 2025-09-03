@@ -129,7 +129,7 @@
 /mob/living/carbon/human/Stat()
 	..()
 	if(mind)
-		var/datum/antagonist/vampirelord/VDL = mind.has_antag_datum(/datum/antagonist/vampirelord)
+		var/datum/antagonist/vampirelord/VDL = (mind.has_antag_datum(/datum/antagonist/vampirelord) || mind.has_antag_datum(/datum/antagonist/succubus))
 		if(VDL)
 			if(statpanel("Stats"))
 				stat("Vitae:", VDL.vitae)
@@ -881,6 +881,10 @@
 /mob/living/carbon/human/has_breasts()
 	RETURN_TYPE(/obj/item/organ/breasts)
 	return getorganslot(ORGAN_SLOT_BREASTS)
+
+/mob/living/carbon/human/has_butt()
+	RETURN_TYPE(/obj/item/organ/butt)
+	return getorganslot(ORGAN_SLOT_BUTT)
 
 /mob/living/carbon/human/proc/is_fertile()
 	var/obj/item/organ/vagina/vagina = getorganslot(ORGAN_SLOT_VAGINA)

@@ -17,6 +17,7 @@
 	var/beingmoved = FALSE
 	var/livingname = null
 	var/summoned = FALSE
+	var/prevmind
 
 /obj/item/bodypart/chest/spirit
 	icon = 'icons/roguetown/underworld/underworld.dmi'
@@ -48,19 +49,22 @@
 	verbs += /mob/living/proc/mob_sleep
 	verbs += /mob/living/proc/lay_down
 	ADD_TRAIT(src, TRAIT_PACIFISM, TRAIT_GENERIC)
-	var/first_part = pick("Sorrowful", "Forlorn", "Regretful", "Piteous", "Rueful", "Dejected", "Desolate", "Mournful", "Melancholic", "Woeful")
-	var/second_part = pick("Wanderer", "Traveler", "Pilgrim", "Vagabond", "Nomad", "Wayfarer", "Spirit", "Specter", "Wraith", "Phantom")
-	name = first_part + " " + second_part
+//	var/first_part = pick("Sorrowful", "Forlorn", "Regretful", "Piteous", "Rueful", "Dejected", "Desolate", "Mournful", "Melancholic", "Woeful")
+//	var/second_part = pick("Wanderer", "Traveler", "Pilgrim", "Vagabond", "Nomad", "Wayfarer", "Spirit", "Specter", "Wraith", "Phantom")
+//	name = first_part + " " + second_part
 
 	//initialize limbs
 	create_bodyparts()
 	create_internal_organs()
 	. = ..()
+//	if (client)
+	//	client.prefs.copy_to(H)
+	//	H.dna.update_dna_identity()
 	var/L = new /obj/item/flashlight/lantern/shrunken(src.loc)
 	owned_lantern = L
 	put_in_hands(L)
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_BAREFOOT, 1, 2)
-	addtimer(CALLBACK(src, PROC_REF(give_patron_toll)), 10 SECONDS) // For you, no charge.
+//	addtimer(CALLBACK(src, PROC_REF(give_patron_toll)), 10 SECONDS) // For you, no charge.
 
 /mob/living/carbon/spirit/IgniteMob() // Override so they don't catch on fire.
 	return
@@ -269,3 +273,22 @@
 		SSdroning.kill_droning(ghost.client)
 		ghost.remove_client_colour(/datum/client_colour/monochrome)
 	ghost.returntolobby()
+
+
+/proc/burial_rite_make_ghost(mob/living/corpse)
+	var/mob/dead/observer/ghost
+	if(!corpse.key)
+		ghost = corpse.get_ghost(even_if_they_cant_reenter = TRUE, ghosts_with_clients = FALSE)
+		//Try to find underworld spirit, if there is no ghost
+		if(!ghost)
+			var/mob/living/carbon/spirit/spirit = corpse.get_spirit()
+			if(spirit)
+				ghost = spirit.ghostize(force_respawn = TRUE)
+				if(ghost)
+					qdel(spirit)
+				else
+					message_admins("[ADMIN_LOOKUPFLW(spirit)] as underworld spirit had its body buried but failed to ghost for some reason. Might be stuck somehow.")
+		return ghost
+	else
+		ghost = corpse.ghostize(force_respawn = TRUE)
+		return ghost

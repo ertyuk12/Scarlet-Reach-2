@@ -4,6 +4,8 @@
 	check_same_tile = FALSE
 	do_time = 2.5 SECONDS // Slightly faster than average for repeated action
 	stamina_cost = 0
+	//feed_type = "BOTH"
+	charm_type = "BOTH"
 
 /datum/sex_action/spanking/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
@@ -51,4 +53,4 @@
 /datum/sex_action/spanking/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(target.sexcon.finished_check())
 		return TRUE
-	return FALSE 
+	return FALSE

@@ -716,3 +716,10 @@ GLOBAL_LIST_EMPTY(travel_spawn_points)
 		tile.aportalid = travel_id
 		tile.aportalgoesto = travel_goes_to_id
 		tile.required_trait = required_trait
+
+/obj/effect/landmark/start/spirit
+	name = "ghost"
+	icon = 'icons/mob/landmarks.dmi'
+	icon_state = "arrow"
+//	jobspawn_override = list("Bandit")
+	delete_after_roundstart = FALSE

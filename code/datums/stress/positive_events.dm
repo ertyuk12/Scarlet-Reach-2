@@ -256,3 +256,8 @@
 	timer = 5 MINUTES
 	stressadd = -3
 	desc = "<span class='green'>I got some love, and it was wonderful!</span>"
+
+/datum/stressevent/cumsuccubus
+	timer = 15 MINUTES
+	stressadd = -10
+	desc = "<span class='green'>I came, and it was so wonderful! I need to do that again sometime!.</span>"
