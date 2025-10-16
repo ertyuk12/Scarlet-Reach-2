@@ -345,7 +345,7 @@
 	vote_desc = "Spice reigns. Occurrences are more erratic and negative. Her favor shines upon drunkards and addicts."
 	desc = "Baotha revels in chaos, making events and reality unpredictable."
 	welcome_text = "The sickly sweet aromas of liqour and spice fills the air.."
-	weight = 4
+	weight = 8
 	always_votable = TRUE
 	color_theme = "#9933FF"
 

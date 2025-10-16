@@ -28,7 +28,7 @@ SUBSYSTEM_DEF(gamemode)
 	/// Our storyteller. They progresses our trackboards and picks out events
 	var/datum/storyteller/current_storyteller
 	/// Result of the storyteller vote/pick. Defaults to Astrata.
-	var/selected_storyteller = /datum/storyteller/astrata
+	var/selected_storyteller = /datum/storyteller/baotha
 	/// List of all the storytellers. Populated at init. Associative from type
 	var/list/storytellers = list()
 	/// Next process for our storyteller. The wait time is STORYTELLER_WAIT_TIME
@@ -535,7 +535,7 @@ SUBSYSTEM_DEF(gamemode)
 	if(!length(storytellers))
 		for(var/type in subtypesof(/datum/storyteller))
 			storytellers[type] = new type()
-	set_storyteller(/datum/storyteller/astrata)
+	set_storyteller(/datum/storyteller/baotha)
 	calculate_ready_players()
 	roll_pre_setup_points()
 	//handle_pre_setup_roundstart_events()
@@ -730,7 +730,7 @@ SUBSYSTEM_DEF(gamemode)
 /datum/controller/subsystem/gamemode/proc/set_storyteller(passed_type)
 	if(!storytellers[passed_type])
 		message_admins("Attempted to set an invalid storyteller type: [passed_type], force setting to guide instead.")
-		current_storyteller = storytellers[/datum/storyteller/astrata] //if we dont have any then we brick, lets not do that
+		current_storyteller = storytellers[/datum/storyteller/baotha] //if we dont have any then we brick, lets not do that
 		CRASH("Attempted to set an invalid storyteller type: [passed_type].")
 	var/datum/storyteller/chosen_storyteller = storytellers[passed_type]
 	chosen_storyteller.times_chosen++
@@ -1342,7 +1342,7 @@ SUBSYSTEM_DEF(gamemode)
 	var/total_influence = get_follower_influence(chosen_storyteller)
 	for(var/influence_factor in initialized_storyteller.influence_factors)
 		total_influence += calculate_specific_influence(chosen_storyteller, influence_factor)
-	
+
 	total_influence += initialized_storyteller.bonus_points
 
 	return total_influence

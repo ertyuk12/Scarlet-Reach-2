@@ -52,6 +52,7 @@
 	salvage_result = /obj/item/natural/hide/cured
 	grid_height = 64
 	grid_width = 64
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/armor/armordress/alt
 	icon_state = "armordressalt"
@@ -136,6 +137,7 @@
 	armor_class = ARMOR_CLASS_LIGHT
 	grid_height = 64
 	grid_width = 64
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	name = "light gambeson"
@@ -200,7 +202,7 @@
 	detail_tag = "_detail"
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/otavan/Initialize()
-	. = ..()		
+	. = ..()
 	update_icon()
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/otavan/update_icon()
@@ -516,7 +518,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_CHOP, BCLASS_SMASH)
 	max_integrity = 300
 	sellprice = 20
-	grid_height = 96 
+	grid_height = 96
 	grid_width = 64
 
 /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
@@ -529,6 +531,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_CHOP, BCLASS_SMASH)
 	max_integrity = 300
 	sellprice = 25
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/raneshen
 	name = "megarmach scale coat"
@@ -545,7 +548,7 @@
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	armor = ARMOR_LEATHER_STUDDED
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_CHOP, BCLASS_SMASH)
-	max_integrity = ARMOR_INT_CHEST_LIGHT_BASE	
+	max_integrity = ARMOR_INT_CHEST_LIGHT_BASE
 
 /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/steppe
 	name = "fur-woven hatanga coat"
@@ -685,6 +688,7 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	allowed_sex = list(MALE, FEMALE)
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/armor/longcoat/ComponentInitialize()
 	. = ..()
@@ -738,6 +742,7 @@
 	allowed_race = CLOTHED_RACES_TYPES
 	grid_height = 64
 	grid_width = 64
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/armor/silkcoat/Initialize()
 	. = ..()
@@ -821,6 +826,7 @@
 	smelt_bar_num = 2
 	grid_height = 64 // Same size as gambeson.
 	grid_width = 64
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/aalloy
 	name = "decrepit hauberk"
@@ -1068,6 +1074,7 @@
 	equip_delay_other = 3 SECONDS
 	strip_delay = 6 SECONDS
 	smelt_bar_num = 4
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/fluted
 	name = "fluted plate"
@@ -1102,7 +1109,7 @@
 /obj/item/clothing/suit/roguetown/armor/plate/full/fluted/ornate/ordinator
 	name = "inquisitorial ordinator's plate"
 	desc = "A relic that is said to have survived the Grenzelhoft-Otavan war, refurbished and repurposed to slay the arch-enemy in the name of Psydon. <br> A fluted cuirass that has been reinforced with thick padding and an additional shoulder piece. You will endure."
-	icon_state = "ordinatorplate"	
+	icon_state = "ordinatorplate"
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/matthios
 	name = "gilded fullplate"
@@ -1171,6 +1178,7 @@
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_HEAVY
 	smelt_bar_num = 4
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/armor/heartfelt/hand
 	slot_flags = ITEM_SLOT_ARMOR
@@ -1189,6 +1197,7 @@
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_HEAVY
 	smelt_bar_num = 4
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/armor/plate/otavan
 	name = "otavan half-plate"
@@ -1396,6 +1405,7 @@
 	smeltresult = /obj/item/ingot/iron
 	smelt_bar_num = 2
 	blocksound = SOFTHIT
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale/inqcoat/ComponentInitialize()	//No movement rustle component.
 	return
@@ -1421,7 +1431,7 @@
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "armored inquisitorial duster"
 	desc = "Metal plates reinforce this heavy coat, worn over the top of the finest Psydonian plate."
-	smeltresult = /obj/item/ingot/steel 
+	smeltresult = /obj/item/ingot/steel
 	icon_state = "inqcoata"
 	item_state = "inqcoata"
 	equip_delay_self = 4 SECONDS
@@ -1430,7 +1440,7 @@
 	armor = ARMOR_CUIRASS
 	smelt_bar_num = 2
 	smeltresult = /obj/item/ingot/steel
-	blocksound = PLATEHIT	
+	blocksound = PLATEHIT
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale/inqcoat/armored/ComponentInitialize()
 	AddComponent(/datum/component/item_equipped_movement_rustle, SFX_PLATE_STEP)
@@ -1458,6 +1468,7 @@
 	equip_delay_other = 3 SECONDS
 	strip_delay = 6 SECONDS
 	smelt_bar_num = 4
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/armor/plate/blacksteel_full_plate
 	name = "ancient blacksteel plate armor"
@@ -1478,6 +1489,7 @@
 	equip_delay_other = 3 SECONDS
 	strip_delay = 6 SECONDS
 	smelt_bar_num = 4
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/armor/plate/blacksteel_half_plate
 	name = "blacksteel cuirass"
@@ -1510,6 +1522,7 @@
 	smelt_bar_num = 4
 	blocksound = SOFTHIT
 	armor_class = ARMOR_CLASS_MEDIUM
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/armor/plate/elven_plate/Initialize(mapload)
 	. = ..()
@@ -1539,7 +1552,8 @@
 	sellprice = 20
 	armor_class = ARMOR_CLASS_LIGHT
 	allowed_race = NON_DWARVEN_RACE_TYPES
-	flags_inv = HIDEBOOB|HIDECROTCH
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
+
 
 /obj/item/clothing/suit/roguetown/armor/basiceast/light
 	name = "fragile dobo robe"
@@ -1633,7 +1647,7 @@
 	body_parts_covered = COVERAGE_ALL_BUT_LEGS
 	max_integrity = 500
 	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST, BCLASS_PICK, BCLASS_SMASH, BCLASS_CUT, BCLASS_CHOP)
-	
+
 /obj/item/clothing/suit/roguetown/armor/captain/lordcolor(primary,secondary)
 	detail_color = primary
 	update_icon()
@@ -1648,7 +1662,7 @@
 /obj/item/clothing/suit/roguetown/armor/captain/Destroy()
 	GLOB.lordcolor -= src
 	return..()
-	
+
 /obj/item/clothing/suit/roguetown/armor/carapace
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "carapace armor"

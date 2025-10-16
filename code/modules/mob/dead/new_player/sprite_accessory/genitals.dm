@@ -27,7 +27,7 @@
 		return "[icon_state]_2"
 	else
 		return "[icon_state]_1"
-	
+
 ///Old Azure code
  /*
 	if(pp.erect_state == ERECT_STATE_HARD)
@@ -172,7 +172,7 @@
 	icon = 'icons/mob/sprite_accessory/genitals/nethers.dmi'
 	color_key_name = "Nethers"
 	relevant_layers = list(BODY_FRONT_LAYER)
-	
+
 
 /datum/sprite_accessory/vagina/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT, OFFSET_BELT_F)
@@ -211,3 +211,46 @@
 	icon_state = "cloaca"
 	name = "Cloaca"
 	default_colors = list("f99696")
+
+/datum/sprite_accessory/butt
+	icon = 'icons/mob/sprite_accessory/genitals/butt.dmi'
+	color_key_name = "Butt"
+	relevant_layers = list(BODY_ADJ_LAYER)
+
+/datum/sprite_accessory/butt/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+	var/obj/item/organ/butt/butt = organ
+	return "butt_[icon_state]_[butt.butt_size]"
+
+/datum/sprite_accessory/butt/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT, OFFSET_BELT_F)
+
+/datum/sprite_accessory/butt/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+	if(owner.underwear && owner.underwear.covers_butt)
+		return FALSE
+	return is_human_part_visible(owner, HIDEBUTT)
+
+/datum/sprite_accessory/butt/pair
+	icon_state = "pair"
+	name = "Pair"
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+
+/datum/sprite_accessory/butt/pair/small
+	icon_state = "dpair"
+	name = "Pair"
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/datum/sprite_accessory/butt/pair/furry
+	icon_state = "fluff"
+	name = "Fluffy"
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/datum/sprite_accessory/butt/pair/scaled
+	icon_state = "newscaled" //normal scaled is a old version
+	name = "Scales"
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/datum/sprite_accessory/butt/pair/lamia
+	icon_state = "lamia"
+	name = "Scales"
+	color_key_defaults = list(KEY_SKIN_COLOR)

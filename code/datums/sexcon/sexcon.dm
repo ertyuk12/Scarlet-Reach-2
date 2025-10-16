@@ -53,6 +53,7 @@
 	var/tugging_knot_blocked = FALSE
 	var/mob/living/carbon/knotted_owner = null // whom has the knot
 	var/mob/living/carbon/knotted_recipient = null // whom took the knot
+	var/using_speed = FALSE //whether we're using our speed stat to determine how fast our hips move
 
 /datum/sex_controller/New(mob/living/carbon/human/owner)
 	user = owner
@@ -196,7 +197,7 @@
 	var/result = user_controller.get_accessible_body_zone(target.sexcon.access_zone_bitfield, location, grabs)
 	if(result && user == target && !(bodypart in user_controller.using_zones) && user_controller.current_action == SEX_ACTION(src))
 		user_controller.using_zones += location
-	
+
 	return result
 
 /datum/sex_controller/proc/finished_check()
@@ -275,6 +276,8 @@
 			splashed_user.apply_status_effect(status_type)
 		else
 			splashed_type.refresh_cum()
+	if (splashed_user)
+		try_succubus_drain(user, splashed_user)
 	after_ejaculation()
 	if(!oral)
 		after_intimate_climax()
@@ -603,7 +606,7 @@
 	var/force_name = get_force_string()
 	var/speed_name = get_speed_string()
 	var/manual_arousal_name = get_manual_arousal_string()
-	dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a>"
+	dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a> ~|~ <a href='?src=[REF(src)];task=toggle_speed'>[using_speed ? "GOING EAGERLY" : "GOING GENTLY"]</a></center>"
 	if(user.getorganslot(ORGAN_SLOT_PENIS))
 		dat += " ~|~ <a href='?src=[REF(src)];task=manual_arousal_down'>\<</a> [manual_arousal_name] <a href='?src=[REF(src)];task=manual_arousal_up'>\></a>"
 	dat += "</center><center><a href='?src=[REF(src)];task=toggle_finished'>[do_until_finished ? "UNTIL IM FINISHED" : "UNTIL I STOP"]</a>"
@@ -689,6 +692,8 @@
 				arousal_frozen = !arousal_frozen
 		if("toggle_knot")
 			do_knot_action = !do_knot_action
+		if ("toggle_speed")
+			using_speed = !using_speed
 	show_ui()
 
 /datum/sex_controller/proc/try_stop_current_action()
@@ -791,15 +796,26 @@
 	//target_con.receiving += user
 
 /datum/sex_controller/proc/get_speed_multiplier()
-	switch(speed)
-		if(SEX_SPEED_LOW)
-			return 1.0
-		if(SEX_SPEED_MID)
-			return 1.5
-		if(SEX_SPEED_HIGH)
-			return 2.0
-		if(SEX_SPEED_EXTREME)
-			return 2.5
+	if(using_speed)
+		switch(speed)
+			if(SEX_SPEED_LOW)
+				return 1.0 * (user.STASPD / 8)
+			if(SEX_SPEED_MID)
+				return 1.5 * (user.STASPD / 8)
+			if(SEX_SPEED_HIGH)
+				return 2.0 * (user.STASPD / 8)
+			if(SEX_SPEED_EXTREME)
+				return 2.5 * (user.STASPD / 8)
+	else
+		switch(speed)
+			if(SEX_SPEED_LOW)
+				return 1.0
+			if(SEX_SPEED_MID)
+				return 1.5
+			if(SEX_SPEED_HIGH)
+				return 2.0
+			if(SEX_SPEED_EXTREME)
+				return 2.5
 
 /datum/sex_controller/proc/get_stamina_cost_multiplier()
 	switch(force)
@@ -834,6 +850,7 @@
 				return 2.0
 			else
 				return 0.8
+
 
 /datum/sex_controller/proc/get_force_pain_multiplier(passed_force)
 	switch(passed_force)
@@ -928,3 +945,92 @@
 #undef SEX_ZONE_MOUTH
 #undef SEX_ZONE_CHEST
 #undef SEX_ZONE_CHEST_GRAB
+
+
+
+/datum/sex_controller/proc/is_succubus(mob/living/carbon/human/who)//I am NOT checking each person individually for each succubus trait
+	if(HAS_TRAIT(who, TRAIT_SUCCUBUS) || HAS_TRAIT(who, TRAIT_LESSERSUCCUBUS))
+		log_game("[who] is a succubus!")
+		return TRUE
+	else
+		log_game("[who] isn't a succubus!")
+		return FALSE
+
+
+//  this code will remain here in case someone wants to fix it, for now i'm using the almost 1:1 ratwood code copy (see bottom)
+/datum/sex_controller/proc/try_succubus_drain(mob/living/carbon/human/succ, mob/living/carbon/human/victim)
+	var/mob/living/carbon/human/drainer
+	var/mob/living/carbon/human/drained
+//	var/truedrain = FALSE
+	var/amountstolen = 0
+	var/drainthreshold = 5 //prevents stats from going into negative
+//	if(HAS_TRAIT(succ, TRAIT_SUCCUBUS) && !HAS_TRAIT(victim, TRAIT_SUCCUBUS))
+	if(!is_succubus(victim) && is_succubus(succ))
+		drainer = succ
+		drained = victim
+	//	truedrain = TRUE
+//	if(!HAS_TRAIT(succ, TRAIT_SUCCUBUS) && HAS_TRAIT(victim, TRAIT_SUCCUBUS))
+	if(is_succubus(victim) && !is_succubus(succ))
+		drainer = victim
+		drained = succ
+	//	truedrain = TRUE
+	if (drained && drainer)
+		var/datum/antagonist/succubus/SD = (drainer.mind.has_antag_datum(/datum/antagonist/succubus) || drainer.mind.has_antag_datum(/datum/antagonist/succubus/infil))
+		var/datum/antagonist/succubus/LSD = drainer.mind.has_antag_datum(/datum/antagonist/succubuslesser)
+		if (!SD && !LSD)
+			return
+		if (drained.has_status_effect(/datum/status_effect/debuff/succuhate))
+			drained.remove_status_effect(/datum/status_effect/debuff/succuhate)
+		if (drained.has_status_effect(/datum/status_effect/debuff/succucharm))
+			drained.remove_status_effect(/datum/status_effect/debuff/succucharm)
+		drained.apply_status_effect(/datum/status_effect/buff/succulove)
+		to_chat(drainer, span_love("My victim surrenders [victim.p_their()] essence to me..It feels good!"))
+		if (SD)
+			if (drained.STASTR-10 > drainthreshold )
+				drained.change_stat("strength", -1)
+				amountstolen += 5
+			else
+				drained.apply_damage(3, TOX)
+				amountstolen += 2
+
+			if (drained.STACON-10 > drainthreshold  )
+				drained.change_stat("constitution", -1)
+				amountstolen += 5
+			else
+				drained.apply_damage(3, TOX)
+				amountstolen += 2
+
+			if (drained.STAINT+5 > drainthreshold  )
+				drained.change_stat("intelligence", -1)
+				amountstolen += 5
+			else
+				drained.apply_damage(3, TOX)
+				amountstolen += 2
+
+			if (drained.STAEND-10 > drainthreshold )
+				drained.change_stat("endurance", -1)
+				amountstolen += 5
+			else
+				drained.apply_damage(3, TOX)
+				amountstolen += 2
+
+			SD.handle_vitae(150) // enough for one heal
+			amountstolen += 5
+			if (!drained.has_status_effect(/datum/status_effect/debuff/succuhate) && !drained.has_status_effect(/datum/status_effect/buff/succulove))
+				SD.handle_vitae(50)
+
+				to_chat(drainer, span_love("Fresh essence! It tastes wonderful!"))
+				SD.totalensnared += 1
+				amountstolen += 15
+
+			SD.handle_exp(amountstolen)
+		//	SD.succpoints += amountstolen
+		else
+			LSD.handle_vitae(100)
+		to_chat(drained, span_love("That felt so good...I'll need more soon.."))
+
+		drained.sexcon.adjust_charge(300)
+		drainer.sexcon.adjust_charge(300) // infinite cum for the cum god
+
+
+

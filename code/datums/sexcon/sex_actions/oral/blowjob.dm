@@ -36,6 +36,7 @@
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_love("[target] cums into [user]'s mouth!"))
 		target.sexcon.cum_into(oral = TRUE)
+		target.sexcon.try_succubus_drain(target, user)
 
 /datum/sex_action/blowjob/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.visible_message(span_warning("[user] stops sucking [target]'s cock ..."))

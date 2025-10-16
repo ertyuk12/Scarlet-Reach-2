@@ -15,7 +15,7 @@
 	sewrepair = TRUE
 	flags_inv = HIDEBOOB
 	experimental_inhand = FALSE
-	
+
 	grid_width = 64
 	grid_height = 32
 
@@ -39,7 +39,7 @@
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = NON_DWARVEN_RACE_TYPES
 	boobed = TRUE
-	flags_inv= HIDEBOOB|HIDECROTCH
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/black
@@ -408,7 +408,7 @@
 	allowed_sex = list(MALE, FEMALE)
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
-	flags_inv = HIDECROTCH|HIDEBOOB
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
@@ -696,7 +696,7 @@
 		return
 
 /obj/item/clothing/suit/roguetown/armor/skin_armor/easttats/process()
-	if(obj_integrity >= max_integrity) 
+	if(obj_integrity >= max_integrity)
 		STOP_PROCESSING(SSobj, src)
 		src.visible_message(span_notice("The [src] flow more calmly, as they finish resting and regain their strength."), vision_distance = 1)
 		return

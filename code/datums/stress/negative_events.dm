@@ -1,4 +1,4 @@
-/datum/stressevent/vice
+ /datum/stressevent/vice
 	timer = 5 MINUTES
 	stressadd = 5
 	desc = list(span_boldred("I don't indulge my vice."),span_boldred("I need to sate my vice."))
@@ -380,3 +380,13 @@
 	stressadd = 10
 	desc = span_boldred("Perhaps I shouldn't have done that...")
 	timer = 12 MINUTES
+
+/datum/stressevent/nosuccubus
+	timer = 60 MINUTES
+	stressadd = 20
+	desc = "<span class='red'>Nothing will ever match the pleasure I felt earlier..I-I need it again....</span>"
+
+/datum/stressevent/nosuccubusstrong
+	timer = INFINITY //managed by the relevant buff/debuff
+	stressadd = 50 //cutely churns your soul and body for not pleasing your mistress
+	desc = "<span class='boldred'>MY LIFE IS NOTHING WITHOUT PLEASURE.MY LIFE IS NOTHING WITHOUT PLEASURE.MY LIFE IS NOTHING WITHOUT PLEASURE.</span>"

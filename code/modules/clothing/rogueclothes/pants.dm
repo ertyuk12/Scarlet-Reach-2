@@ -17,10 +17,55 @@
 	l_sleeve_zone = BODY_ZONE_L_LEG
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
-	flags_inv = HIDECROTCH
+	flags_inv = HIDECROTCH|HIDEBUTT
 	experimental_inhand = FALSE
 	grid_height = 32
 	grid_width = 64
+	var/endurance = 2
+
+
+//obj/item/clothing/under/roguetown/obj_break(damage_flag)
+//	if(ismob(loc))
+//		var/mob/living/user = loc
+//		if (ishuman(user))
+//			var/obj/item/organ/butt/butt = user.getorganslot(ORGAN_SLOT_BUTT)
+//			if (butt)
+//
+			//	if (butt.butt_size > endurance && armor_class == ARMOR_CLASS_LIGHT && !(user.patron?.type == /datum/patron/old_god))
+
+		//			if(!QDELETED(src))
+			//			src.visible_message(span_danger("The [src] bursts with a loud rip!"))
+			//			playsound(src, "sound/foley/cloth_rip.ogg",  100) // sorry about the pants, but you knew the risk when you chose to have a massiv-
+			//			qdel(src)
+			//	else
+			//		if (butt.butt_size > endurance && armor_class == ARMOR_CLASS_LIGHT && user.patron?.type == /datum/patron/old_god)
+			//			src.visible_message(span_warning("The [src] precariously bulges, but continues to ENDURE."))
+			//		original_armor = armor
+			//		var/list/armorlist = armor.getList()
+			//		for(var/x in armorlist)
+			//			if(armorlist[x] > 0)
+				//			armorlist[x] = 0
+		//	else
+		//		if (butt.butt_size > endurance && armor_class == ARMOR_CLASS_LIGHT && user.patron?.type == /datum/patron/old_god)
+			//		src.visible_message(span_warning("The [src] precariously bulges, but continues to ENDURE."))
+			//	original_armor = armor
+			//	var/list/armorlist = armor.getList()
+			//	for(var/x in armorlist)
+			//	//	if(armorlist[x] > 0)
+	//					armorlist[x] = 0
+//
+//					..()
+//obj/item/clothing/under/roguetown/take_damage(damage_amount, damage_type = BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir, armor_penetration = 0)
+//	..()
+//	if(ismob(loc))
+//		var/mob/living/user = loc
+//		if (ishuman(user))
+	//		var/obj/item/organ/butt/butt = user.getorganslot(ORGAN_SLOT_BUTT)
+	//		if (!butt)
+	//			return
+	//		if (butt.butt_size > endurance && armor_class == ARMOR_CLASS_LIGHT && !(user.patron?.type == /datum/patron/old_god))
+	//			if (obj_integrity < (max_integrity*0.2) && butt.butt_size > endurance)
+		//			src.visible_message(span_warning("The [src] precariously bulges.."))
 
 /obj/item/clothing/under/roguetown/AdjustClothes(mob/user)
 #ifdef MATURESERVER

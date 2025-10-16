@@ -1092,3 +1092,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = null
 	droning_sound_night = null
 	first_time_text = "The Forest of Repentence"
+
+//succubus
+/area/rogue/indoors/succamp
+	name = "blackheart brothel"
+	first_time_text = "Blackheart Lounge"
+	droning_sound = 'sound/music/area/bathold.ogg'
+
+/area/rogue/outdoors/succamp
+	name = "succubus cave"

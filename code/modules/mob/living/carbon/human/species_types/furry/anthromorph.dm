@@ -80,6 +80,7 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/butt/wildkin,
 		/datum/customizer/organ/vagina/anthro,
 		/datum/customizer/organ/horns/tusks,
 		)
