@@ -201,8 +201,13 @@
 #define TRAIT_ADRENALINE_RUSH "Adrenaline Rush"
 #define TRAIT_DEADITE "Deadite"
 #define TRAIT_PUZZLEMASTER "Puzzle Master"
+#define TRAIT_SUCCUBUS "Baotha's Creation"
+#define TRAIT_IMMUNECHARM "Strong-witted"
+#define TRAIT_LESSERSUCCUBUS "Baotha's Toy"
+#define TRAIT_BHBROTHEL "Blackheart Worker"
 // ARMOR / CLOTHING GIVEN TRAITS (GIVEN BY WEARING CLOTHES/ARMOR PIECES)
 #define TRAIT_MONK_ROBE	"Holy Vestatures"
+
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_HERETIC_DEVOUT = span_necrosis("The scorn of Astrata shan't make me waiver, for my faith holds true."),
@@ -369,7 +374,10 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_CURSE_MATTHIOS = span_warning("I am forsaken by the Dragon. Greed will be my only salvation."),
 	TRAIT_CURSE_BAOTHA = span_warning("I am forsaken by the Heartbreaker. I am drowning in her promises."),
 	TRAIT_DEADITE = span_danger("The Rot has overtaken me."),
-	TRAIT_PUZZLEMASTER = span_notice("I've solved an impossible puzzle!")
+	TRAIT_PUZZLEMASTER = span_notice("I've solved an impossible puzzle!"),
+	TRAIT_SUCCUBUS = span_love("I drain essence from those I pleasure."),
+	TRAIT_LESSERSUCCUBUS  = span_love("I feed myself on the lust of those I pleasure."),
+	TRAIT_IMMUNECHARM = span_notice("I can resist some influences.")
 ))
 
 // trait accessor defines
@@ -553,6 +561,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_BLOODLOSS_IMMUNE "bloodloss_immune" // can bleed, but will never die from blood loss
 #define TRAIT_NO_BITE "no_bite" //prevents biting
 #define TRAIT_LEGENDARY_ALCHEMIST		"Expert Herb Finder"
+
 
 //bodypart traits
 #define TRAIT_PARALYSIS	"paralysis" //Used for limb-based paralysis and full body paralysis

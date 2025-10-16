@@ -183,7 +183,8 @@
 			return "FFRONT"
 		if(BODY_UNDER_LAYER)
 			return "UNDER"
-		else
+		if(BODYPARTS_LAYER_PLUS)
+			return "BP+"
 			CRASH("Tried to get an unimplemented layer suffix for sprite accessory of type [type]")
 
 /datum/sprite_accessory/proc/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)

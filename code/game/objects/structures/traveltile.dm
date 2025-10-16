@@ -213,3 +213,6 @@
 	bound_width = 96
 	appearance_flags = NONE
 	opacity = FALSE
+
+/obj/structure/fluff/traveltile/succubus
+	required_trait = TRAIT_BHBROTHEL

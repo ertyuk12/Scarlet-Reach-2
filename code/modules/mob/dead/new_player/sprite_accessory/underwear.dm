@@ -5,6 +5,7 @@
 	var/underwear_type
 	///Whether this underwear includes a top (Because gender = FEMALE doesn't actually apply here.). Hides breasts, nothing more.
 	var/hides_breasts = FALSE
+	//var/covers_butt = FALSE
 
 /datum/sprite_accessory/underwear/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_UNDIES, OFFSET_UNDIES_F)
@@ -12,7 +13,7 @@
 /datum/sprite_accessory/underwear/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	if(hides_breasts)
 		if(is_human_part_visible(owner, HIDECROTCH) || is_human_part_visible(owner, HIDEBOOB))
-			return TRUE	
+			return TRUE
 	return is_human_part_visible(owner, HIDECROTCH)
 
 /datum/sprite_accessory/underwear/briefs

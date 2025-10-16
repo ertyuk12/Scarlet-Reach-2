@@ -78,6 +78,7 @@
 		/datum/customizer/organ/wings/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/butt/wildkin,
 		/datum/customizer/organ/vagina/human_anthro,
 		/datum/customizer/organ/testicles/anthro,
 		)

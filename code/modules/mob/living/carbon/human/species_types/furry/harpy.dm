@@ -49,7 +49,7 @@
 		)
 
 	race_bonus = list(STAT_CONSTITUTION = -3, STAT_STRENGTH = -2, STAT_PERCEPTION = 1, STAT_INTELLIGENCE = 1, STAT_SPEED = 2)
-	inherent_traits = list(TRAIT_CALTROPIMMUNE, TRAIT_NOFALLDAMAGE1, TRAIT_STRONGBITE) // hahahahahh 
+	inherent_traits = list(TRAIT_CALTROPIMMUNE, TRAIT_NOFALLDAMAGE1, TRAIT_STRONGBITE) // hahahahahh
 	inherent_skills = list(
 		/datum/skill/misc/music = 3,
 	)
@@ -89,6 +89,7 @@
 		/datum/customizer/organ/vagina/anthro,
 		/datum/customizer/organ/snout/harpy,
 		/datum/customizer/organ/neck_feature/anthro,
+		/datum/customizer/organ/butt/wildkin, // thou doeseth not earn...HARPY BUTT (maybe later I will get motivation to make a unique feather ass, unless one of you wants to do it)
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,
@@ -122,7 +123,7 @@
 		/datum/descriptor_choice/prominent_three_wild,
 		/datum/descriptor_choice/prominent_four_wild,
 	)
-	
+
 /datum/species/harpy/check_roundstart_eligible()
 	return TRUE
 

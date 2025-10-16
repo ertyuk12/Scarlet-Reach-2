@@ -60,7 +60,8 @@
 		"Warden",
 		"Squire",
 		"Veteran",
-		"Apothecary"
+		"Apothecary",
+
 	)
 
 /datum/round_event/antagonist/solo/vampires_and_werewolves

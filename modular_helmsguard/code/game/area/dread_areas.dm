@@ -123,3 +123,12 @@
 	location_name = "somewhere in the Underway"
 	spookysounds = SPOOKY_FROG
 	spookynight = SPOOKY_GEN
+
+//SUCCUBUS
+/area/rogue/indoors/succamp
+	name = "blackheart brothel"
+	first_time_text = "Ruined Brothel"
+	droning_sound = 'sound/music/area/bathold.ogg' //og bathhouse finally has a place that fits it!
+
+/area/rogue/outdoors/succamp
+	name = "succubus cave"

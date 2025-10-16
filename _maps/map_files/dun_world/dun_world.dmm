@@ -9068,6 +9068,13 @@
 /obj/structure/fluff/railing/border,
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town)
+"cEg" = (
+/obj/structure/fluff/traveltile/succubus{
+	aportalgoesto = "succin1";
+	aportalid = "succexit1"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/mountains)
 "cEh" = (
 /obj/structure/rack/rogue,
 /obj/item/ingot/copper,
@@ -17157,6 +17164,13 @@
 /obj/item/rogueweapon/mace/goden/steel,
 /turf/open/floor/rogue/tile,
 /area/rogue/under/town/basement/keep)
+"eRQ" = (
+/obj/structure/fluff/traveltile/succubus{
+	aportalgoesto = "succin3";
+	aportalid = "succexit3"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/mountains)
 "eRS" = (
 /turf/closed/wall/mineral/rogue/wooddark/end{
 	dir = 4
@@ -17805,6 +17819,13 @@
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church/chapel)
+"faG" = (
+/obj/structure/fluff/traveltile/succubus{
+	aportalgoesto = "succin2";
+	aportalid = "succexit2"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/mountains)
 "faM" = (
 /obj/structure/flora/roguegrass/herb/random,
 /turf/open/floor/rogue/grassred,
@@ -25637,6 +25658,13 @@
 /obj/structure/rogue/trophy/deer,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town)
+"hkD" = (
+/obj/structure/fluff/traveltile/succubus{
+	aportalgoesto = "succin4";
+	aportalid = "succexit4"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors/cave)
 "hkF" = (
 /obj/effect/landmark/start/adventurerlate{
 	dir = 1
@@ -37611,6 +37639,13 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
+"kCV" = (
+/obj/structure/fluff/traveltile/succubus{
+	aportalgoesto = "succin5";
+	aportalid = "succexit5"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors/cave)
 "kCZ" = (
 /obj/effect/decal/cobbleedge{
 	dir = 10
@@ -361109,6 +361144,9 @@ vvB
 vvB
 vvB
 vvB
+fZN
+fZN
+fZN
 vvB
 vvB
 vvB
@@ -363369,6 +363407,11 @@ vvB
 vvB
 vvB
 vvB
+kuT
+kuT
+kuT
+kuT
+kuT
 vvB
 vvB
 vvB
@@ -363823,6 +363866,8 @@ vvB
 vvB
 vvB
 vvB
+kuT
+kuT
 vvB
 vvB
 vvB
@@ -510492,6 +510537,7 @@ tIH
 tIH
 tIH
 tIH
+qPv
 tIH
 tIH
 tIH
@@ -511394,6 +511440,7 @@ qPv
 qPv
 qPv
 dcn
+qPv
 tIH
 tIH
 dcn

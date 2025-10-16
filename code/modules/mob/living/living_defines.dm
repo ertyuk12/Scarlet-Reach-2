@@ -182,7 +182,7 @@
 	var/rogue_sneaking_light_threshhold = 0.15
 	/* If the character has prominent posterior mob descriptor, let the asscheeks alert the guards*/
 	var/thicc_sneaking = FALSE
-
+	var/thicc_sneaking_volume = 1 //challenge: set rear size to the maximum value, and slip into the keep vault and out without getting noticed
 	var/voice_pitch = 1
 
 	var/domhand = 0

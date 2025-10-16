@@ -286,3 +286,13 @@
 	timer = 5 MINUTES
 	stressadd = -2
 	desc = span_green("The box of souls was destroyed. I feel relief.")
+
+/datum/stressevent/cumsuccubus
+	timer = INFINITY //managed by the relevant buff/debuff
+	stressadd = -30
+	desc = "<span class='green'>That felt wonderful! I need to do that again sometime!</span>"
+
+/datum/stressevent/cumsuccubusstrong
+	timer = INFINITY //managed by the relevant buff/debuff
+	stressadd = -50
+	desc = "<span class='green'>Nothing in my life can compare to such pleasure..I must have it again, sometime!</span>"

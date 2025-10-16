@@ -55,6 +55,7 @@ GLOBAL_LIST_EMPTY(wizardstart)
 GLOBAL_LIST_EMPTY(nukeop_start)
 GLOBAL_LIST_EMPTY(bandit_starts)
 GLOBAL_LIST_EMPTY(vlord_starts)
+
 GLOBAL_LIST_EMPTY(vspawn_starts)
 GLOBAL_LIST_EMPTY(dknight_starts)
 GLOBAL_LIST_EMPTY(vlordspawn_starts)
@@ -78,6 +79,7 @@ GLOBAL_LIST_EMPTY(secequipment) //sec equipment lockers that scale with the numb
 GLOBAL_LIST_EMPTY(deathsquadspawn)
 GLOBAL_LIST_EMPTY(emergencyresponseteamspawn)
 GLOBAL_LIST_EMPTY(ruin_landmarks)
+GLOBAL_LIST_EMPTY(succubus_starts)
 
 	//away missions
 GLOBAL_LIST_EMPTY(awaydestinations)	//a list of landmarks that the warpgate can take you to

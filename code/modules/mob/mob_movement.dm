@@ -111,7 +111,7 @@
 		return FALSE
 	else if(mob.is_shifted)
 		mob.unpixel_shift()
-	
+
 	mob.last_client_interact = world.time
 
 	var/mob/living/L = mob  //Already checked for isliving earlier
@@ -255,7 +255,7 @@
 			return FALSE
 		move_delay = world.time + 10
 		to_chat(src, span_warning("[L] still has footing! I need a stronger grip!"))
-		return TRUE    
+		return TRUE
 
 	if(isanimal(mob.pulling))
 		var/mob/living/simple_animal/bound = mob.pulling
@@ -269,7 +269,7 @@
 		if(bound.binded)
 			move_delay = world.time + 10
 			to_chat(src, span_warning("[bound] is bound in a summoning circle. I can't move them!"))
-			return TRUE		
+			return TRUE
 
 // similar to the above, but for NPCs mostly
 /mob/proc/is_move_blocked_by_grab()
@@ -706,8 +706,13 @@
 				m_intent = MOVE_INTENT_SNEAK
 				if(isliving(src))
 					var/mob/living/L = src
-					if(!islamia(L) && !isdoll(L) && (/datum/mob_descriptor/prominent/prominent_bottom in L.mob_descriptors))
+					var/butt_size = 0
+					if (L.getorganslot(ORGAN_SLOT_BUTT))
+						butt_size = L.getorganslot(ORGAN_SLOT_BUTT).butt_size
+					if(!islamia(L) && !isdoll(L) && ((/datum/mob_descriptor/prominent/prominent_bottom in L.mob_descriptors) || butt_size > 2))
 						L.thicc_sneaking = TRUE
+						if (butt_size > 2)
+							L.thicc_sneaking_volume = butt_size - 2
 					else
 						L.thicc_sneaking = FALSE
 				update_sneak_invis()
@@ -734,7 +739,7 @@
 	if(hud_used?.static_inventory) //Update UI
 		for(var/atom/movable/screen/rogmove/selector in hud_used.static_inventory)
 			selector.update_icon()
-			
+
 	if(!silent)
 		playsound_local(src, 'sound/misc/click.ogg', 100)
 
@@ -826,7 +831,7 @@
 		src.apply_status_effect(/datum/status_effect/buff/magearmor)
 		return TRUE
 
-	
+
 
 /mob/proc/toggle_eye_intent(mob/user) //clicking the fixeye button either makes you fixeye or clears your target
 	if(fixedeye)
@@ -900,7 +905,7 @@
 /mob/proc/canZMove(direction, turf/target)
 	return FALSE
 
-// Ageneral-purpose proc used to centralize checks to skip turf, movement, step, etc. effects 
+// Ageneral-purpose proc used to centralize checks to skip turf, movement, step, etc. effects
 // for mobs that are floating, flying, intangible, etc.
 /mob/proc/is_floor_hazard_immune()
 	return throwing || (movement_type & (FLYING|FLOATING))

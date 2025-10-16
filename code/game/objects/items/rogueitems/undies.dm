@@ -19,6 +19,7 @@
 	grid_height = 32
 	grid_width = 32
 	throw_speed = 0.5
+	var/covers_butt = FALSE
 
 /obj/item/undies/attack(mob/M, mob/user, def_zone)
 	if(ishuman(M))

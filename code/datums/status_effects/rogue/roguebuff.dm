@@ -1288,3 +1288,26 @@
 	var/obj/effect/temp_visual/recall_smoke/M = new /obj/effect/temp_visual/recall_smoke(get_turf(owner))
 	M.color = effect_color
 	pulse += 1
+
+
+
+/datum/status_effect/buff/succulove
+	id = "succulove"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/succulove
+	effectedstats = list("speed" = 3, "endurance" = 10,  "strength" = 10, "perception" = -4, "intelligence" = -4,  "constitution" = 10)
+	duration = 10 MINUTES
+
+/datum/status_effect/buff/succulove/on_apply()
+	. = ..()
+	owner.add_stress(/datum/stressevent/cumsuccubus)
+	owner.remove_stress(/datum/stressevent/nosuccubus)
+
+/datum/status_effect/buff/succulove/on_remove()
+	. = ..()
+	owner.apply_status_effect(/datum/status_effect/debuff/succuhate)
+
+
+/atom/movable/screen/alert/status_effect/buff/succulove
+	name = "Feeling Refreshed"
+	desc = "My loins no longer ache, and my body feels strong!...Just need a bit more of that, sometime.."
+	icon_state = "buff"

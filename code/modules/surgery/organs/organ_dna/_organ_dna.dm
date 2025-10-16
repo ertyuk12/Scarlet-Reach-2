@@ -76,3 +76,11 @@
 	vagina_organ.fertility = fertility
 	if(vagina_organ.accessory_type == /datum/sprite_accessory/vagina/cloaca)
 		vagina_organ.monohole = TRUE
+
+/datum/organ_dna/butt
+	var/butt_size = DEFAULT_BUTT_SIZE
+
+/datum/organ_dna/butt/imprint_organ(obj/item/organ/organ)
+	..()
+	var/obj/item/organ/butt/butt_organ = organ
+	butt_organ.butt_size = butt_size

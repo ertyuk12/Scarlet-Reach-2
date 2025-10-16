@@ -40,6 +40,7 @@
 #define ITEM_SLOT_DENYPOCKET	(1<<22) // this is to deny items with a w_class of WEIGHT_CLASS_SMALL or WEIGHT_CLASS_TINY to fit in pockets.
 #define ITEM_SLOT_BACKPACK		(1<<23)
 
+
 #define ITEM_SLOT_BACK			ITEM_SLOT_BACK_L | ITEM_SLOT_BACK_R
 
 //SLOTS
@@ -167,6 +168,7 @@
 #define HIDECROTCH		(1<<13)
 #define HIDETAIL		(1<<14)
 #define HIDESNOUT		(1<<15)
+#define HIDEBUTT		(1<<16)
 
 //blocking_behavior var on clothing items
 #define BLOCKBOOTS		(1<<0)
